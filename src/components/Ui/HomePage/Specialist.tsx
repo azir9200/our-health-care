@@ -1,15 +1,45 @@
+export const dynamic = "force-dynamic";
 import { Box, Button, Container, Stack, Typography } from "@mui/material";
 import Image from "next/image";
 import Link from "next/link";
 
+export type TSpecialist = {
+  id: string;
+  title: string;
+  icon: string;
+};
+
 const Specialist = async () => {
-  const res = await fetch("http://localhost:5000/api/v1/specialties", {
-    next: {
-      revalidate: 30,
-    },
-  });
-  const { data: specialties } = await res.json();
-  console.log("data", specialties);
+  let specialties: TSpecialist[] = [];
+
+  try {
+    const res = await fetch("http://localhost:5000/api/v1/specialties", {
+      next: { revalidate: 30 },
+    });
+
+    if (!res.ok) {
+      throw new Error(`Failed to fetch specialties: ${res.status}`);
+    }
+
+    const json = await res.json();
+
+    // Check structure before accessing
+    if (json && Array.isArray(json.data)) {
+      specialties = json.data;
+    } else {
+      console.error("Unexpected data format:", json);
+    }
+  } catch (error) {
+    console.error("Error fetching specialties:", error);
+  }
+
+  // const res = await fetch("http://localhost:5000/api/v1/specialties", {
+  //   next: {
+  //     revalidate: 30,
+  //   },
+  // });
+  // const { data: specialties } = await res.json();
+  // console.log("data", specialties);
 
   return (
     <Container>
@@ -32,7 +62,7 @@ const Specialist = async () => {
           </Typography>
         </Box>
         <Stack direction="row" gap={4} mt={5}>
-          {specialties.slice(0, 6).map((specialty: any) => (
+          {specialties.slice(0, 6).map((specialty: TSpecialist) => (
             <Box
               key={specialty.id}
               sx={{
