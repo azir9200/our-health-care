@@ -1,0 +1,43 @@
+const assets = {
+  // images: {
+  //   // Images should be placed in the public folder
+  //   doctors: "/images/landing_page/doctors.png",
+  //   atm: "/images/landing_page/atm-card.png",
+  //   videoCall: "/images/landing_page/video_call.png",
+  //   report: "/images/landing_page/diagnostic.png",
+  //   budge: "/images/landing_page/badge.png",
+  //   folder: "/images/landing_page/folder.png",
+  //   doctor1: "/images/doctor1.png",
+  //   doctor2: "/images/doctor2.png",
+  //   doctor3: "/images/doctor3.png",
+  //   Stethoscope: "/images/Stethoscope.png",
+  //   familyOnBeach: "/images/familyOnBeach.png",
+  // },
+  svgs: {
+    logo: "/svgs/logo.svg",
+    search: "/svgs/search.svg",
+    calendar: "/svgs/calender.svg",
+    location: "/svgs/location.svg",
+    kidney: "/svgs/kidney.svg",
+    brain: "/svgs/brain.svg",
+    dna: "/svgs/dna.svg",
+    doctorSearch: "/svgs/doctorSearch.svg",
+    profile: "/svgs/profile.svg",
+    schedule: "/svgs/schedule.svg",
+    solution: "/svgs/solution.svg",
+    grid: "/svgs/grid.svg",
+    arrow: "/svgs/arrow.svg",
+    cardiology: "/svgs/Cardiology.svg",
+    neurology: "/svgs/Neurology.svg",
+    urology: "/svgs/Urology.svg",
+    orthopedic: "/svgs/Orthopedic.svg",
+    dentist: "/svgs/Dentist.svg",
+    ophthalmology: "/svgs/Ophthalmology.svg",
+    award: "/svgs/award-icon.svg",
+    care: "/svgs/care-icon.svg",
+    equipment: "/svgs/medical-equipment-icon.svg",
+    call: "/svgs/call-icon.svg",
+  },
+};
+
+export default assets;
